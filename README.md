@@ -1,0 +1,2 @@
+# v2confserver
+根据vmess订阅链接自动生成v2ray配置文件，且定时更新；v2ray通过HTTP读取之
