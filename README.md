@@ -4,13 +4,9 @@
 ## 原理
 
 1. 输入你的订阅地址
-2. vmessconfig获取订阅地址上的内容
-3. vmessping解析出`vmess://...`链接列表
-4. vmessping对这些`vmess://...`链接的质量进行测量
-5. vmessconfig根据质量进行排序
-6. vmessconfig根据模板生成配置文件
-7. v2confserver用http.Server接口让外部访问配置文件
-8. 在v2ray[命令行参数](https://www.v2fly.org/guide/command.html#v2ray)中指定`v2ray -c http://...`以访问配置文件
+2. [vmessconfig](https://github.com/yindaheng98/vmessconfig)获取订阅地址上的服务器列表，测量通信质量并选最好的服务器生成配置文件
+3. v2confserver用http.Server接口让外部访问配置文件
+4. 在v2ray[命令行参数](https://www.v2fly.org/guide/command.html#v2ray)中指定`v2ray -c http://...`以访问配置文件
 
 ## 用法
 
