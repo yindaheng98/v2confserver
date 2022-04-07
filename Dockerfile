@@ -2,7 +2,8 @@ FROM golang:1.16-alpine AS builder
 WORKDIR /usr/src/app
 COPY . .
 RUN go mod download && go mod verify && \
-    go build -v -o /v2confserver cmd/v2confserver
+    cd cmd/v2confserver && \
+    go build -v -o /v2confserver
 
 FROM alpine
 
