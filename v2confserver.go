@@ -14,7 +14,8 @@ import (
 type V2CmdConfig struct {
 	VmessCmdConfig *args.CmdConfig `flag:"-"`
 	v2conf         *conf.Config
-	Interval       uint `desc:"Interval for get and ping vmess outbounds"`
+	Interval       uint   `desc:"Interval for get and ping vmess outbounds"`
+	Addr           string `desc:"Address where the server listen on"`
 }
 
 func (c *V2CmdConfig) Routine(ctx context.Context) {
@@ -31,8 +32,8 @@ func (c *V2CmdConfig) Routine(ctx context.Context) {
 	}
 }
 
-func (c *V2CmdConfig) Response(w http.ResponseWriter, r *http.Request) {
-	j, err := json.Marshal(c.v2conf)
+func (c *V2CmdConfig) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	j, err := json.MarshalIndent(c.v2conf, "", " ")
 	if err != nil {
 		fmt.Printf("V2Config.Response failed: %+v\n", err)
 	}
