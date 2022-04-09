@@ -360,6 +360,8 @@ github.com/yindaheng98/vmessconfig v0.0.0-20220407133950-609c73f50573 h1:aDsZz4j
 github.com/yindaheng98/vmessconfig v0.0.0-20220407133950-609c73f50573/go.mod h1:hDqW3y9tY9v/9KbYclPF/2avSjZjH9GKrcTzlgZpqVM=
 github.com/yindaheng98/vmessconfig v0.0.0-20220407134556-146826f2ec80 h1:xDWJof6sXEHWKWD6rB8ycEYXqHpLFIWe1sXGkzgYWEw=
 github.com/yindaheng98/vmessconfig v0.0.0-20220407134556-146826f2ec80/go.mod h1:hDqW3y9tY9v/9KbYclPF/2avSjZjH9GKrcTzlgZpqVM=
+github.com/yindaheng98/vmessconfig v0.0.0-20220409103534-8a90cf5a9696 h1:yVKxOXO/mxjVDLF8B/Oo1uno564ygmOFFEPDDFF+swk=
+github.com/yindaheng98/vmessconfig v0.0.0-20220409103534-8a90cf5a9696/go.mod h1:hDqW3y9tY9v/9KbYclPF/2avSjZjH9GKrcTzlgZpqVM=
 github.com/yindaheng98/vmessping v0.3.5-0.20220405100036-6c27aab8ef0a h1:fMEdS3v6O5jjLHdLjb/f0c/f+uO7h5+OwYSucfGyuok=
 github.com/yindaheng98/vmessping v0.3.5-0.20220405100036-6c27aab8ef0a/go.mod h1:xnExqKEXeUvdnC5VE3ajJePOUhfTHJLuWg7D7tQ9x9Q=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
