@@ -14,6 +14,7 @@ type V2CmdConfig struct {
 	v2conf         vmessconfig.V2Config
 	Interval       uint   `desc:"Interval for get and ping vmess outbounds"`
 	Addr           string `desc:"Address where the server listen on"`
+	GetVmessList   string `desc:"How to GetVmessList"`
 }
 
 func (c *V2CmdConfig) Routine(ctx context.Context) {
@@ -30,7 +31,7 @@ func (c *V2CmdConfig) Routine(ctx context.Context) {
 	}
 }
 
-func (c *V2CmdConfig) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (c *V2CmdConfig) ServeHTTP(w http.ResponseWriter, _ *http.Request) {
 	_, err := fmt.Fprint(w, string(c.v2conf))
 	if err != nil {
 		fmt.Printf("V2Config.Response failed: %+v\n", err)

@@ -4,13 +4,14 @@ import (
 	"context"
 	"fmt"
 	"github.com/yindaheng98/v2confserver"
+	"github.com/yindaheng98/vmessconfig"
+	"github.com/yindaheng98/vmessconfig/cmd/args"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
 )
-import "github.com/yindaheng98/vmessconfig/cmd/args"
 
 func exit(err error) {
 	if err != nil {
@@ -26,6 +27,7 @@ func main() {
 		VmessCmdConfig: args.NewCmdConfig(),
 		Interval:       1800,
 		Addr:           ":80",
+		GetVmessList:   "default",
 	}
 	err := args.AddCmdArgs(v2CmdConfig)
 	if err != nil {
@@ -38,6 +40,10 @@ func main() {
 	err = v2CmdConfig.VmessCmdConfig.ParseCmdArgs(os.Args[1:])
 	if err != nil {
 		exit(err)
+	}
+
+	if v2CmdConfig.GetVmessList == "wget" {
+		vmessconfig.CustomizeGetVmessList(vmessconfig.WgetGetVmessList)
 	}
 
 	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt, os.Kill, syscall.SIGTERM)
